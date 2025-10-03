@@ -137,7 +137,8 @@ const folderWrappers = document.querySelectorAll(".folder-wrapper");
 
 let isMobile = window.innerWidth < 1000;
 
-function setInitialPositions() { // Changed function name for clarity
+function setInitialPositions() {
+  // Changed function name for clarity
   gsap.set(folderWrappers, { y: isMobile ? 0 : 25 });
 }
 
@@ -178,7 +179,7 @@ folders.forEach((folder, index) => {
       gsap.to(img, {
         y: "-100%",
         rotation: rotation,
-        duration: 0.5,
+        duration: 0.025,
         ease: "back.out(1.7)",
         delay: imgIndex * 0.025,
       });
@@ -196,7 +197,7 @@ folders.forEach((folder, index) => {
     // Animate the folder wrapper back to its initial position
     gsap.to(folderWrappers[index], {
       y: 25,
-      duration: 0.25,
+      duration: 0.025,
       ease: "back.out(1.7)",
     });
 
@@ -205,7 +206,7 @@ folders.forEach((folder, index) => {
       gsap.to(img, {
         y: "0%",
         rotation: 0,
-        duration: 0.25,
+        duration: 0.025,
         ease: "back.out(1.7)",
         delay: imgIndex * 0.05,
       });
