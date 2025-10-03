@@ -2,24 +2,35 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Alo;
 }
 
 body {
   overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+@font-face {
+  font-family: "Alo";
+  src: url(./fonts/0MgJo2O76GW2odMUePKilzgM0A.woff2);
 }
 
 :root {
-  --folder-yellow-color: #ffe430;
-  --folder-light-gray-color: #d9d9d9;
-  --folder-dark-gray-color: #ababab;
+  --bg: #f4f7f0;
+  --fg: #0f0f0f;
+  --folder-yellow-color: #ffc640;
+  --folder-light-gray-color: #d5d9d2;
+  --folder-dark-gray-color: #b0b3ad;
+  --disabled-folder-bg: #e8ebe4;
+  --disabled-folder-fg: #b0b3ad;
 }
 
-#main {
+/* #main {
   width: 100dvw;
   overflow-x: hidden;
   height: auto;
-}
+} */
 
 nav {
   /* background-color: yellow; */
@@ -41,150 +52,218 @@ nav ul li {
   list-style: none;
   align-self: center;
 }
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..144,100..1000;1,9..144,100..1000&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 
-.hero-headings {
-  font-size: 6rem;
-  display: flex;
-  justify-content: space-around;
-  font-weight: 100;
-  margin-bottom: 1rem;
+:root {
+  --bg: #f4f7f0;
+  --fg: #0f0f0f;
+  --folder-yellow-color: #ffc640;
+  --folder-light-gray-color: #d5d9d2;
+  --folder-dark-gray-color: #b0b3ad;
+  --disabled-folder-bg: #e8ebe4;
+  --disabled-folder-fg: #b0b3ad;
 }
 
-.hero-headings .h4-2 {
-  opacity: 0.2;
+body {
+  overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
-.folder-UI {
+img {
   width: 100%;
-  min-height: 75dvh;
+  height: 100%;
+  object-fit: cover; /* Changed to cover for a better fit */
+}
+
+h2 {
+  font-family: "DM Sans"; /* Added font family */
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+p {
+  font-family: "DM Mono"; /* Added font family */
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
+h2,
+p {
+  transition: color 250ms ease;
+}
+
+.folders {
+  width: 100%;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* This aligns content to the bottom */
+  overflow: hidden;
+}
+
+.row {
   position: relative;
-}
-
-.folder-UI .folder-group-1 {
-  width: 50%;
-  /* height: auto; */
-}
-
-.folder-UI .folder-group-2 {
-  width: 50%;
-}
-
-.folder-UI .folders {
-  height: 12.5rem;
-  min-width: 48rem;
-  position: absolute;
-  border-top-left-radius: 0.4rem;
-  gap: -1;
+  width: 100%;
+  display: flex;
 }
 
 .folder {
-  height: 12.5rem;
   position: relative;
-  /* background-color: var(--folder-yellow-color); */
-}
-
-.folder-UI .folders.folder-2,
-.folder-UI .folders.folder-5 {
-  top: -5%;
-}
-
-.folder-UI .folders.folder-3,
-.folder-UI .folders.folder-6 {
-  top: -50%;
-  z-index: 3;
-}
-
-.folder-UI .folders.folder-5 {
-  right: 0%;
-  z-index: 2;
-  width: 65%;
-}
-
-.folder-UI .folders .folder-top {
-  background-color: transparent;
-  height: 2.5rem;
-  width: 100%;
-  position: relative;
+  flex: 1;
+  height: 220px;
   display: flex;
-  z-index: 3;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-.folder-UI .folders .folder-top .folder-no {
-  width: 22rem;
-  height: 100%;
-  background-color: var(--folder-yellow-color);
-  clip-path: polygon(0 1%, 90% 0, 100% 100%, 0% 100%);
-  padding: 0 1rem;
-  align-content: center;
-  border-top-right-radius: 9rem;
-}
-
-.folder-UI .folders .folder-bottom {
-  height: 75%;
-  width: 100%;
-  background-color: var(--folder-yellow-color);
-  z-index: 9;
-}
-
-/* .folder-UI .folders.folder-2 {
-  background-color: var(--folder-light-gray-color);
-} */
-
-.folder-UI .folders.folder-2 .folder-top .folder-no,
-.folder-UI .folders.folder-4 .folder-top .folder-no,
-.folder-UI .folders.folder-6 .folder-no {
-  background-color: var(--folder-light-gray-color);
-}
-
-.folder-UI .folders.folder-2 .folder-bottom,
-.folder-UI .folders.folder-4 .folder-bottom,
-.folder-UI .folders.folder-6 .folder-bottom {
-  background-color: var(--folder-light-gray-color);
-}
-
-.folder-UI .folders.folder-5 .folder-top .folder-no {
-  background-color: var(--folder-dark-gray-color);
-}
-
-.folder-UI .folders.folder-5 .folder-bottom {
-  background-color: var(--folder-dark-gray-color);
-}
-
-.folder-UI .project-images {
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.folder-UI .project-images div {
-  width: 13rem;
-  height: 13rem;
-  background-color: blue;
+.folder-preview {
   position: absolute;
-  left: 40%;
-  top: 100%;
-  z-index: -1;
-  /* display: none; */
+  top: 0;
+  left: 0;
+  width: 25rem;
+  height: 100%;
+  pointer-events: none;
 }
 
-.folder-UI .project-images div img {
-  width: 176px;
-  height: 193;
+.folder-preview-img {
+  position: absolute;
+  top: 50%;
+  width: 12rem;
+  height: 12rem;
+  transition: transform 300ms ease;
+  transform-origin: center;
+}
+
+.folder-preview-img:nth-child(1) {
+  left: 20%;
+  transform-origin: top left;
+}
+
+.folder-preview-img:nth-child(2) {
+  left: 50%;
+  transform-origin: center;
+}
+
+.folder-preview-img:nth-child(3) {
+  left: 80%;
+  transform-origin: top right;
+}
+
+.folder-wrapper {
+  position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  will-change: transform;
 }
 
-.folder-UI .project-images div:nth-child(1) {
-  background-color: pink;
-  top: 100%;
-  left: 58%;
+.folder-index {
+  position: relative;
+  width: 40%;
+  padding: 0.75rem;
+  background-color: var(--folder-light-gray-color);
 }
 
-.folder-UI .project-images div:nth-child(2) {
-  background-color: black;
-  top: 100%;
-  left: 20%;
+.folder-index::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 99%;
+  height: 101%;
+  aspect-ratio: 1;
+  clip-path: polygon(0 0, 25% 0, 100% 100%, 0 100%);
+  background-color: inherit; /* Inherits color from parent */
+}
+
+.folder-name {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 0 0.25rem;
+  padding-left: 2rem;
+  background-color: var(--folder-light-gray-color);
+}
+
+/* Variant Colors */
+.folder.variant-1 .folder-index,
+.folder.variant-1 .folder-name,
+.folder.variant-1 .folder-index::after {
+  background-color: var(--folder-yellow-color);
+}
+
+.folder.variant-2 .folder-index,
+.folder.variant-2 .folder-name,
+.folder.variant-2 .folder-index::after {
+  background-color: var(--folder-dark-gray-color);
+}
+
+.folder.variant-3 .folder-index,
+.folder.variant-3 .folder-name,
+.folder.variant-3 .folder-index::after {
+  background-color: var(--folder-light-gray-color);
+}
+
+/* Disabled State */
+.folder.disabled .folder-index,
+.folder.disabled .folder-name,
+.folder.disabled .folder-index::after {
+  background-color: var(--disabled-folder-bg);
+}
+
+.folder.disabled p,
+.folder.disabled h2 {
+  color: var(--disabled-folder-fg);
+}
+
+/* Row Positioning */
+.row:nth-child(1) {
+  bottom: -13rem;
+}
+
+.row:nth-child(2) {
+  bottom: -7.5rem;
+}
+
+.row:nth-child(3) {
+  bottom: -2rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1000px) {
+  .folders {
+    height: auto;
+  }
+  .row {
+    flex-direction: column;
+    bottom: 0 !important;
+  }
+
+  .folder {
+    margin-bottom: -0.5rem;
+  }
+
+  .folder-preview {
+    display: none;
+  }
+
+  .folder-name {
+    padding: 0.2rem 2rem;
+  }
+
+  /* Swapping colors for mobile layout */
+  .row:nth-child(2) .folder.variant-2 .folder-index,
+  .row:nth-child(2) .folder.variant-2 .folder-name,
+  .row:nth-child(2) .folder.variant-2 .folder-index::after {
+    background-color: var(--folder-light-gray-color);
+  }
+
+  .row:nth-child(2) .folder.variant-3 .folder-index,
+  .row:nth-child(2) .folder.variant-3 .folder-name,
+  .row:nth-child(2) .folder.variant-3 .folder-index::after {
+    background-color: var(--folder-dark-gray-color);
+  }
 }
